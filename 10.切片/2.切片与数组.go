@@ -19,6 +19,10 @@ func main() {
 	mynum[1] = 100
 	fmt.Println(mynum, newNum)
 
+	//切片的make定义
+	//变量名 :=make( []type, size, [cap] )     cap 为可选参数
+	n := make([]int, 3, 5)
+	fmt.Println(n)
 }
 
 /*
