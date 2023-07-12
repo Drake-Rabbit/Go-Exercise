@@ -22,6 +22,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 	user := make(map[string]string)
 	user["name"] = " lam"
 	user["email"] = "35435@qq.com"
+	user["age"] = "50"
 
 	temp.Execute(w, user)
 }

@@ -5,8 +5,20 @@
     <title>Title</title>
 </head>
 <body>
+
+<p>{{if lt .age 40}}</p>
+<p>小于40</p>
+
+<p>{{else if  gt .age 45}}</p>
+<p>大于40</p>
+{{else}}
+<P>HHHHH</P>
+{{end}}
+<p>{{$user := .}}</p>
 <p>{{.}}</p>
-<p>{{.name}}</p>
+<p>{{.name | println " hello "}}</p>
+<p>{{.name | len }}</p>
 <p>{{.email}}</p>
+<p>{{.age}}</p>
 </body>
 </html>
