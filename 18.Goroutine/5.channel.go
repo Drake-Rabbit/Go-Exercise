@@ -1,11 +1,8 @@
 package main
 
-import (
-	"sync"
-)
-
 var p = 0
-var wg sync.WaitGroup
+
+//var wg sync.WaitGroup
 
 func ssu(n int, mut chan bool) {
 	defer wg.Done()
@@ -17,10 +14,10 @@ func ssu(n int, mut chan bool) {
 
 func main() {
 	//单向通道,只能读和只能写
-	wch := make(chan<- int, 2)
-	rch := make(<-chan string, 2)
-	wch <- 5
-	x := <-rch
+	//wch := make(chan<- int, 2)
+	//rch := make(<-chan string, 2)
+	//wch <- 5
+	//x := <-rch
 
 	//ch := make(chan int, 3) //有缓冲通道,可以既写入又输出
 	//ch <- 3

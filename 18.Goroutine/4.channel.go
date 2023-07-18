@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
 
 func te(ch chan int) {
@@ -15,7 +14,7 @@ func te(ch chan int) {
 	//fmt.Println(x)
 }
 
-var wg sync.WaitGroup
+//var wg sync.WaitGroup
 
 // 我是单行注释
 func main() {
