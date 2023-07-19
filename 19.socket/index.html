@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.}}</title>
+</head>
+<body>
+<input type="txt"   id="msg">
+<input type="button"  value="发送" id="sendMsg">
+</body>
+</html>
+
+<script>
+    ws = new WebSocket("ws://127.0.0.1:5566/websocket")
+    ws.onopen=function (){
+        ws.send("conncec success lient")
+    }
+    ws.onmessage=function (data){
+        console.log(data.data)
+    }
+    msg = document.getElementById("msg")
+    sendMsg = document.getElementById("sendMsg")
+    sendMsg.onclick=function (){
+        ws.send(msg.value)
+    }
+</script>
