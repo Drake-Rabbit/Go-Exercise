@@ -1,0 +1,2 @@
+[USER]2023/07/20 23:06:13 G:/Environment/GoWorks/src/Go-Exercise/20.rwFile/3.log.go:16: hello print
+[USER]2023/07/20 23:06:39 G:/Environment/GoWorks/src/Go-Exercise/20.rwFile/3.log.go:16: hello print
