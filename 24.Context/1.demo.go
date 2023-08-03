@@ -56,13 +56,13 @@ func main() {
 	r := gin.Default()
 	r.Static("img", "24.Context/static/image")
 	r.StaticFile("/1.png", "24.Context/static/image/1.png")
-	//r.LoadHTMLGlob("24.Context/view/*")
+	//r.LoadHTMLGlob("24.Context/captview/*")
 	r.SetFuncMap(template.FuncMap{
 		"sum": SSum,
 	})
-	r.LoadHTMLGlob("24.Context/view/**/*")
+	r.LoadHTMLGlob("24.Context/captview/**/*")
 
-	//r.LoadHTMLGlob("24.Context/view/*")
+	//r.LoadHTMLGlob("24.Context/captview/*")
 
 	//自定义验证器Validator
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {

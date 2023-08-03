@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+
+    <input type="text" placeholder="输入验证码" name="captcha">
+    <img id ="img" src=""  onclick="captcha()"/>
+    <input type="button" value="提交">
+
+</head>
+
+<body>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    function captcha() {
+        $.get("api/getCaptcha", function (res) {
+            $("#img").attr("src", res.data)
+        })
+    }
+    captcha()
+</script>
