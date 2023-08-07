@@ -17,7 +17,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
-
+    captcha()
     function captcha() {
         $.get("/api/getCaptcha", function (res) {
             $("#img").attr("src", res.data)
@@ -25,10 +25,10 @@
         })
     }
     captcha()
-    $("#sub").click(function (){
+    $(#sub).click(function (){
         captcha=$("#captcha").val()
-        captcha_id =$("#captcha_id").val()
-        $.post("/login",{captcha:captcha,captcha_id:captcha_id},function (res){
+        captcha_id =$("#captcha").val()
+        $.post("/api/verifyCaptcha",{captcha:captcha,captcha_id:captcha_id},function (res){
 
         })
     })
