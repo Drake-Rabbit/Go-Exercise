@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户登陆</title>
+    <title>用户登陆/上传</title>
 
-    <input type="text" placeholder="输入验证码" name="captcha">
-    <input type="hidden" id="captchaid">
-    <img id ="img" src="" onclick="captcha()"/>
-    <input type="button" id="sub" value="提交">
+<!--    <input type="text" placeholder="输入验证码" name="captcha">-->
+<!--    <input type="hidden" id="captchaid">-->
+<!--    <img id ="img" src="" onclick="captcha()"/>-->
+<!--    <input type="button" id="sub" value="提交">-->
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="img">
+        <input type="submit" value="上传">
+    </form>
 
 </head>
 
@@ -18,18 +23,18 @@
 
 <script>
 
-    function captcha() {
-        $.get("/api/getCaptcha", function (res) {
-            $("#img").attr("src", res.data)
-            $("#captchaid").val(res.captcha)
-        })
-    }
-    captcha()
-    $("#sub").click(function (){
-        captcha=$("#captcha").val()
-        captcha_id =$("#captcha_id").val()
-        $.post("/login",{captcha:captcha,captcha_id:captcha_id},function (res){
-
-        })
-    })
+    // function captcha() {
+    //     $.get("/api/getCaptcha", function (res) {
+    //         $("#img").attr("src", res.data)
+    //         $("#captchaid").val(res.captcha)
+    //     })
+    // }
+    // captcha()
+    // $("#sub").click(function (){
+    //     captcha=$("#captcha").val()
+    //     captcha_id =$("#captcha_id").val()
+    //     $.post("/login",{captcha:captcha,captcha_id:captcha_id},function (res){
+    //
+    //     })
+    // })
 </script>
