@@ -18,6 +18,8 @@ func main() {
 
 }
 
+type teste struct {
+}
 type User struct {
 	Token string `form:"token" binding:"required"`
 }
